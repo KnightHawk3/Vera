@@ -1,5 +1,8 @@
-*.class
 
+*.pyc
+
+.swp
+*.class
 # Package Files #
 *.jar
 *.war
