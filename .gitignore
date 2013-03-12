@@ -1,7 +1,7 @@
 
 *.pyc
 
-.swp
+*.swp
 *.class
 # Package Files #
 *.jar
