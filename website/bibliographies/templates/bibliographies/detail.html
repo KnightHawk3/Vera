@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ bibliography.name }}</h1>
+
+{% if error_message %}<p><strong> Hey we had an error: {{ error_message }}</strong> You might want to email this to declan@TheDisorganisation.com</p>{% endif %}
+
+<dl class="dl-horizontal">
+{% for entry in bibliography.entry_set.all %}
+<div class="well well-large">
+    <dt>Title</dt>
+    <dd>{{ entry.title }}</dd>
+    <dt>Author</dt>
+    <dd>{{ entry.author }}</dd>
+    <dt>Year</dt>
+    <dd>{{ entry.datePublished }}</dd>
+</div>
+{% endfor %}
+</dl>
+{% endblock content %}

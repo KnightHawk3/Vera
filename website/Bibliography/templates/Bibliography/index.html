@@ -1,9 +1,0 @@
-{% if latest_bib_list %}
-    <ul>
-    {% for bibliography in latest_bib_list %}
-        <li><a href="/Bibliography/{{ bibliograpy.id }}">{{ bibliography.owner }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
