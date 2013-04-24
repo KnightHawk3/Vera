@@ -1,23 +1,24 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from polls.models import Choice, Poll
+from bibliographies.forms import BibliographyForm
 
 
-#def vote(request, poll_id):
-#    p = get_object_or_404(Poll, pk=poll_id)
-#    try:
-#        selected_choice = p.choice_set.get(pk=request.POST['choice'])
-#    except (KeyError, Choice.DoesNotExist):
-#        # Redisplay the poll voting form.
-#        return render(request, 'polls/detail.html', {
-#            'poll': p,
-#            'error_message': "You didn't select a choice.",
-#        })
-#    else:
-#        selected_choice.votes += 1
-#        selected_choice.save()
-#        # Always return an HttpResponseRedirect after successfully dealing
-#        # with POST data. This prevents data from being posted twice if a
-#        # user hits the Back button.
-#        return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
+def add_bibliography(request):
+    if request.method == 'POST':  # If the form has been submitted...
+        form = BibliographyForm(request.POST)  # A form bound to the POST data
+        if form.is_valid():  # All validation rules pass
+            # TODO: Have this redirect to a sucess page
+            bibliography = form.save(commit=False)
+            # Here is where I can set logging
+            bibliography.save()
+            return HttpResponseRedirect('/')  # Redirect after POST
+    else:
+        # If they didn't fill out a form display the form
+        form = BibliographyForm()
+
+    return render(request, 'bibliographies/add.html', {
+        'form': form,
+    })
+
+def add_entry(request):
+

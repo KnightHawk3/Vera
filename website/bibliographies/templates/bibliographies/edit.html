@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit</h1>
+
+{% if error_message %}<p><strong> Hey we had an error: {{ error_message }}</strong> You might want to email this to declan@TheDisorganisation.com</p>{% endif %}
+<form action="/add" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>{% endblock content %}
+

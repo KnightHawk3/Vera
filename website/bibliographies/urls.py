@@ -22,5 +22,6 @@ urlpatterns = patterns('',
             model=Bibliography,
             template_name='bibliographies/results.html'),
         name='results'),
-    url(r'^(?P<poll_id>\d+)/vote/$', 'bibliographies.views.vote', name='vote'),
+    #url(r'^(?P<poll_id>\d+)/edit/$', 'bibliographies.views.add_bibliograhpy', name='vote'),
+    url(r'add/$', 'bibliographies.views.add_bibliography', name='add_bibliography'),
 )

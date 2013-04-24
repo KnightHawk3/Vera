@@ -1,0 +1,7 @@
+# TODO:
+- Allow users to create bibliographies
+    * 80% done
+- Add more kinds of entry (Website, article)
+- User Auth
+- Bibtex output
+- Word output

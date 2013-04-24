@@ -2,10 +2,9 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
-
 class Bibliography(models.Model):
-    name = models.CharField(max_length=200)
-    create_date = models.DateTimeField('date created')
+    name = models.CharField(max_length=100)
+    create_date = models.DateTimeField(auto_now_add=True, blank=True)
 
     def was_created_recently(self):
         now = timezone.now()
@@ -21,11 +20,9 @@ class Bibliography(models.Model):
 
 class Entry(models.Model):
     bibliography = models.ForeignKey(Bibliography)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=100)
     datePublished = models.DateTimeField('date published')
-    author = models.CharField(max_length=200)
-    # TODO Make an enum to represent more then a book
-    # kind =
+    author = models.CharField(max_length=100)
 
     def __unicode__(self):
         return self.title

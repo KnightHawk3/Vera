@@ -10,12 +10,9 @@ class EntryInline(admin.TabularInline):
 class BibliographyAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['name']}),
-        ('Date information', {'fields': ['create_date'], 'classes': ['collapse']}),
     ]
     inlines = [EntryInline]
-    list_display = ('name', 'create_date', 'was_created_recently')
-    list_filter = ['create_date']
+    list_display = ('name', 'was_created_recently')
     search_fields = ['title']
-    date_hierarchy = 'create_date'
 
 admin.site.register(Bibliography, BibliographyAdmin)
