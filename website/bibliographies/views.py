@@ -19,6 +19,3 @@ def add_bibliography(request):
     return render(request, 'bibliographies/add.html', {
         'form': form,
     })
-
-def add_entry(request):
-
