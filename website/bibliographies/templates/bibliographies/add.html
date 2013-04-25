@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block content %}
 <h1>Create a New Bibliography</h1>
 
@@ -7,5 +8,5 @@
 <form action="/add/" method="post">{% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Submit" />
-</form>{% endblock content %}
-
+</form>
+{% endblock content %}

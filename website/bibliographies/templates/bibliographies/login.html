@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>You need to login to use Vera!</h1>
+<p>Sorry about this, you need to login. You can log in with:</p>
+<ul>
+    <li><a href="{% url "socialauth_begin" "google" %}">Google</a></li>
+    <li><a href="">Twitter</li>
+    <li><a href="">Facebook</li>
+</ul>
+{% endblock %}

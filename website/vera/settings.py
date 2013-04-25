@@ -7,6 +7,17 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+LOGIN_URL          = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL    = '/login-error/'
+SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
+AUTHENTICATION_BACKENDS = (
+    #'social_auth.backends.twitter.TwitterBackend',
+    #'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -20,6 +31,7 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -113,7 +125,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     'C:/www/vera/templates',  # Make sure to have something in one of these
-    '/www/vera/templates',  # I am so sorry.
+    '/www/vera/templates',    # I am so sorry.
 )
 
 INSTALLED_APPS = (
@@ -123,13 +135,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
     'polls',
     'bibliographies',
     'bootstrap_toolkit',
+    'social_auth'
 )
 
 # A sample logging configuration. The only tangible logging
