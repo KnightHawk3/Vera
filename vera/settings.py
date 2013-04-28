@@ -143,7 +143,8 @@ INSTALLED_APPS = (
     'bibliographies',
     'bootstrap_toolkit',
     'social_auth',
-    'django_jenkins'
+    'django_jenkins',
+    'django_extensions'
 )
 
 # See http://docs.djangoproject.com/en/dev/topics/logging
