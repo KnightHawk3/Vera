@@ -171,6 +171,11 @@ LOGGING = {
     }
 }
 
+TEST_RUNNER="ignoretests.DjangoIgnoreTestSuiteRunner"
+IGNORE_TESTS = (
+    'social_auth',
+    )
+JENKINS_TEST_RUNNER="ignoretests.jenkins.JenkinsIgnoreTestSuiteRunner"
 
 JENKINS_TASKS = (
     'django_jenkins.tasks.with_coverage',
