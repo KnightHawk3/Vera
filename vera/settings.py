@@ -112,8 +112,6 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-Destroying test database for alias 'default' (':memory:')...
-OSError: [Errno 2] No such file or directory
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -184,5 +182,7 @@ JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
     'django_jenkins.tasks.run_csslint',
+    'django_jenkins.tasks.run_sloccount',
     'django_jenkins.tasks.lettuce_tests',
+    'django_jenkins.tasks.run_graphmodels',
 )
