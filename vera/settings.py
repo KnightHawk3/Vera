@@ -1,4 +1,9 @@
 # Django settings for vera project.
+import os
+from  pyclbr import readmodule_ex
+
+TEMPLATE_DIRS = (
+)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -84,7 +89,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "C:/www/vera/static",
+    os.path.join(os.path.dirname(__file__), "../static"),
 )
 
 # List of finder classes that know how to find static files in
@@ -123,12 +128,7 @@ ROOT_URLCONF = 'vera.urls'
 WSGI_APPLICATION = 'vera.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    'C:/www/vera/templates',  # Make sure to have something in one of these
-    '/www/vera/templates',    # I am so sorry.
-    '/var/lib/jenkins/jobs/Vera_Templates/workspace', # and one for the CI
+    os.path.join(os.path.dirname(__file__), "../templates"),
 )
 
 INSTALLED_APPS = (

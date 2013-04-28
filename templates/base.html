@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load bootstrap_toolkit %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Vera {% endblock title %}</title>
+    {% bootstrap_stylesheet_tag %}
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Dosis|Istok+Web' rel='stylesheet' type='text/css'>
+    <link href='/static/css/styles.css' rel='stylesheet' type='text/css'>
+    
+    {% bootstrap_javascript_tag %}
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">Vera</a>
+            <ul class="nav">
+                <li> {% if not user.is_authenticated %} <a href="{% url "bibliographies:login" %}">Login</a>{% else %} <a href="{% url "bibliographies:login" %}">{{ user.first_name }} {{ user.last_name }}</a>{% endif %}</li>
+                <li><a href="{% url "bibliographies:add_bibliography" %}" class="">Create New</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    {% bootstrap_messages %}
+
+    {% block content %}Uhoh! Something went wrong.<br>That must suck.{% endblock %}
+
+    <p><hr></p>
+
+    <footer class="row">
+        <div class="span6">
+            <p>This is <a href="https://github.com/knighthawk3/vera">Vera</a>, a webapp by The Disorganisation</p>
+        </div>
+        <div class="span6" style="text-align:right">
+            <p> <a href="http://TheDisorganisation.com">The Disorganisation</a> 2012 | GPL </p>
+            <i>I wont let love disrupt, corrupt or interrupt me anymore.</i><br>
+        </div><br>
+        <div class="span6" style="text-align:right"></div>
+    </footer>
+
+</div> <!-- container -->
+
+</body>
+</html>
