@@ -145,6 +145,11 @@ INSTALLED_APPS = (
     'django_extensions'
 )
 
+PROJECT_APPS=(
+    'vera',
+    'bibliographies',
+)
+
 # See http://docs.djangoproject.com/en/dev/topics/logging
 LOGGING = {
     'version': 1,
