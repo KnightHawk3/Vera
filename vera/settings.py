@@ -96,6 +96,8 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
+# Note readers of the source code: The deployed version of the server uses a
+# different key, don't bother with it.
 SECRET_KEY = 'j(13tmdq_a3*=-iq6^d+p7^0-1n)g(0j6ajx$atu3pgmz3vi=z'
 
 # List of callables that know how to import templates from various sources.
@@ -140,14 +142,11 @@ INSTALLED_APPS = (
     'polls',
     'bibliographies',
     'bootstrap_toolkit',
-    'social_auth'
+    'social_auth',
+    'django_jenkins'
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+# See http://docs.djangoproject.com/en/dev/topics/logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -171,3 +170,15 @@ LOGGING = {
         },
     }
 }
+
+
+JENKINS_TASKS = (
+    'django_jenkins.tasks.with_coverage',
+    'django_jenkins.tasks.django_tests',
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.run_csslint',
+    'django_jenkins.tasks.run_sloccount',
+    'django_jenkins.tasks.lettuce_tests',
+    'django_jenkins.tasks.run_graphmodels',
+)
