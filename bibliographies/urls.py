@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic import DetailView, TemplateView
 from django.utils import timezone
 from bibliographies.models import Bibliography
 
