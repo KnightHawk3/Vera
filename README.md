@@ -1,4 +1,4 @@
 Vera
 ====
 
-An Android/Web app being created.
+A bibliography maker with a andoid and web interface!
