@@ -126,6 +126,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     'C:/www/vera/templates',  # Make sure to have something in one of these
     '/www/vera/templates',    # I am so sorry.
+    '/var/lib/jenkins/jobs/Vera_Templates/workspace', # and one for the CI
 )
 
 INSTALLED_APPS = (
