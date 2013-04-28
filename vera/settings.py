@@ -139,7 +139,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'polls',
     'bibliographies',
     'bootstrap_toolkit',
     'social_auth',
