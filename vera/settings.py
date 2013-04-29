@@ -127,7 +127,7 @@ ROOT_URLCONF = 'vera.urls'
 WSGI_APPLICATION = 'vera.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), "/templates"),
+    os.path.join(os.path.dirname(__file__), "../templates"),
 )
 
 INSTALLED_APPS = (
