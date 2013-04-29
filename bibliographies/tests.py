@@ -9,6 +9,9 @@ from bibliographies.models import Bibliography
 class BibliographyTestCase(unittest.TestCase):
 
     def setUp(self):
+    """
+    Sets up the project
+    """
         self.bibwithoutspace = Bibliography(name="Friction")
         self.bibwithspace = Bibliography(
             name="The Effects of the coeficent of friction on stopping distance.",
@@ -28,6 +31,9 @@ class BibliographyTestCase(unittest.TestCase):
                          u'The Effects of the coeficent of friction on stopping distance.')
 
     def test_future_bibliography_wasnt_created_recently(self):
+        """
+        Asserts that a bibliography created in the future isn't counted as new
+        """
         future_bib = Bibliography(name='test',
                                   create_date=timezone.now()
                                   + datetime.timedelta(days=30))
