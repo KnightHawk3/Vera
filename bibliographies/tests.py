@@ -9,9 +9,9 @@ from bibliographies.models import Bibliography
 class BibliographyTestCase(unittest.TestCase):
 
     def setUp(self):
-    """
-    Sets up the project
-    """
+        """
+        Sets up the project
+        """
         self.bibwithoutspace = Bibliography(name="Friction")
         self.bibwithspace = Bibliography(
             name="The Effects of the coeficent of friction on stopping distance.",
