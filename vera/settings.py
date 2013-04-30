@@ -8,7 +8,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Declan Kelly', 'declan@KnightHawk3.com'),
 )
 
 LOGIN_URL          = '/login/'
@@ -16,10 +16,11 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_ERROR_URL    = '/login-error/'
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 AUTHENTICATION_BACKENDS = (
-    #'social_auth.backends.twitter.TwitterBackend',
-    #'social_auth.backends.facebook.FacebookBackend',
     'social_auth.backends.google.GoogleBackend',
     'django.contrib.auth.backends.ModelBackend',
+    # To be implemented
+    #'social_auth.backends.twitter.TwitterBackend',
+    #'social_auth.backends.facebook.FacebookBackend',
 )
 
 MANAGERS = ADMINS
